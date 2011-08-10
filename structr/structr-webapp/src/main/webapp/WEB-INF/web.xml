@@ -80,6 +80,21 @@
 		<servlet-name>ClickServlet</servlet-name>
 		<url-pattern>*.htm</url-pattern>
 	</servlet-mapping>
+	
+    <!-- REST api -->
+	<servlet>
+		<servlet-name>structr REST API</servlet-name>
+		<servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+		<init-param>
+			<param-name>com.sun.jersey.config.property.packages</param-name>
+			<param-value>org.structr.rest.test</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>structr REST API</servlet-name>
+		<url-pattern>/api/*</url-pattern>
+	</servlet-mapping>
+	
     <!--  custom context parameter start -->
 	<context-param>
 		<description>structr config file path</description>
