@@ -19,9 +19,12 @@
 
 package org.structr.common;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.structr.core.Command;
 import org.structr.core.Services;
 import org.structr.core.entity.AbstractNode;
+import org.structr.core.entity.User;
 import org.structr.core.node.FindNodeCommand;
 
 /**
@@ -32,10 +35,11 @@ public class PathHelper {
 
 	public AbstractNode find(String path) {
 
+		User user = CurrentSession.getUser();
 		AbstractNode node = null;
 
 		Command findNodeCommand = Services.command(FindNodeCommand.class);
-		node = (AbstractNode)findNodeCommand.execute(null, path);
+		node = (AbstractNode)findNodeCommand.execute(user, path);
 
 		// check security context
 		SecurityContext context = CurrentRequest.getSecurityContext();
