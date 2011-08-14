@@ -38,13 +38,6 @@ public class AppActionContainer extends AbstractNode
 	}
 
 	@Override
-	public void initializeRenderers(Map<RenderMode, NodeRenderer> renderers)
-	{
-		renderers.put(RenderMode.Default, new NullRenderer());
-		renderers.put(RenderMode.Direct, new ActionRenderer());
-	}
-
-	@Override
 	public void onNodeCreation()
 	{
 	}
@@ -52,6 +45,13 @@ public class AppActionContainer extends AbstractNode
 	@Override
 	public void onNodeInstantiation()
 	{
+	}
+
+	@Override
+	public void initializeRenderers(Map<RenderMode, NodeRenderer> renderers)
+	{
+		renderers.put(RenderMode.Default, new NullRenderer());
+		renderers.put(RenderMode.Direct, new ActionRenderer());
 	}
 
     @Override

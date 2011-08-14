@@ -19,6 +19,8 @@
 package org.structr.core.entity.app;
 
 import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.http.HttpSession;
 import org.structr.common.CurrentRequest;
 import org.structr.common.StructrOutputStream;
@@ -30,6 +32,7 @@ import org.structr.core.entity.AbstractNode;
  */
 public class AppLogout extends ActionNode
 {
+	private static final Logger logger = Logger.getLogger(AppLogout.class.getName());
 	private static final String ICON_SRC = "/images/door_out.png";
 
 	@Override

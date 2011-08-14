@@ -110,7 +110,7 @@ public class CurrentRequest {
 			*/
 
 			// testing a different way...
-			redirectUrl = referrer.concat(destination.getNodePath(currentNode));
+			redirectUrl = referrer;
 
 			try {
 

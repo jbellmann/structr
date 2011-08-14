@@ -27,9 +27,11 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.structr.common.RenderMode;
 import org.structr.common.StructrOutputStream;
+import org.structr.common.renderer.NullRenderer;
 import org.structr.core.NodeRenderer;
 import org.structr.core.entity.AbstractNode;
 import org.structr.core.entity.StructrRelationship;
+import org.structr.core.renderer.ActionRenderer;
 
 /**
  *
@@ -124,8 +126,10 @@ public abstract class ActionNode extends AbstractNode
 	}
 
 	@Override
-	public void initializeRenderers(final Map<RenderMode, NodeRenderer> rendererMap)
+	public void initializeRenderers(Map<RenderMode, NodeRenderer> renderers)
 	{
+		renderers.put(RenderMode.Default, new NullRenderer());
+		renderers.put(RenderMode.Direct, new ActionRenderer());
 	}
 
 	// ----- protected methods -----
