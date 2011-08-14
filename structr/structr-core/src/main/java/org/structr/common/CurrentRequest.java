@@ -89,6 +89,7 @@ public class CurrentRequest {
 
 			logger.log(Level.INFO, "referrer: {0}, requestURI: {1}", new Object[] { referrer, requestURI });
 
+			/*
 			// TODO: Find a better solution for this.
 			// Currently, we check the referrer if it contains the context path.
 			// If yes redirect to the absolute node path which contains the context path
@@ -106,6 +107,10 @@ public class CurrentRequest {
 			} else {
 				redirectUrl = getAbsoluteNodePath(destination);
 			}
+			*/
+
+			// testing a different way...
+			redirectUrl = referrer.concat(destination.getNodePath(currentNode));
 
 			try {
 
