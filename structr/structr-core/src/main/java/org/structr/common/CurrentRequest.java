@@ -109,6 +109,8 @@ public class CurrentRequest {
 
 				CurrentSession.setRedirected(true);
 
+				logger.log(Level.INFO, "Redirecting to {0}...", redirectUrl);
+
 				// Use encodeURL here to enable UrlRewriteFilter rule
 				// response.sendRedirect(response.encodeURL(redirectUrl));
 				response.sendRedirect(redirectUrl);
