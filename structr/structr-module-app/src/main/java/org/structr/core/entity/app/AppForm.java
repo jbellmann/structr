@@ -55,11 +55,11 @@ public class AppForm extends HtmlNode {
 
 			String actionUrl = null;
 
-//			if (startNode != null) {
-//				actionUrl = submit.getNodePath(startNode.getContextNode());
-//			} else {
+			if (startNode != null) {
+				actionUrl = submit.getNodePath(startNode.getContextNode());
+			} else {
 				actionUrl = CurrentRequest.getAbsoluteNodePath(submit);
-//			}
+			}
 
 			renderer.addAttribute("action", actionUrl);
 		}
