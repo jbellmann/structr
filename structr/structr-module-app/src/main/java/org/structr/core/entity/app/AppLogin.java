@@ -155,6 +155,9 @@ public class AppLogin extends ActionNode
 
 		// Username and password are both valid
 		CurrentSession.setGlobalUsername(loginUser.getName());
+		
+		// test: make logged in user available to security context
+		CurrentSession.setUser(loginUser);
 
 		// Register user with internal session management
 		long sessionId = SessionMonitor.registerUserSession(CurrentSession.getSession());
